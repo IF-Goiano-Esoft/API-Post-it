@@ -1,6 +1,7 @@
 package com.swlo.postit.resources;
 
 import com.swlo.postit.entities.dto.AuthDto;
+import com.swlo.postit.entities.dto.NewUserDto;
 import com.swlo.postit.entities.dto.UserDto;
 import com.swlo.postit.services.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class UserResource {
     }
 
     @PostMapping("/create")
-    public void createUser(@RequestBody UserDto rawUser) {
+    public void createUser(@RequestBody NewUserDto rawUser) {
         usersService.createUser(rawUser);
     }
 

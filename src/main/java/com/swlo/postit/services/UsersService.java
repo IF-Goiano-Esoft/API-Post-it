@@ -2,6 +2,7 @@ package com.swlo.postit.services;
 
 import com.swlo.postit.entities.Users;
 import com.swlo.postit.entities.dto.AuthDto;
+import com.swlo.postit.entities.dto.NewUserDto;
 import com.swlo.postit.entities.dto.UserDto;
 import com.swlo.postit.repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class UsersService {
         this.repository = repository;
     }
 
-    public void createUser(UserDto rawUser) {
+    public void createUser(NewUserDto rawUser) {
         Users user = new Users();
         user.setName(rawUser.name());
         user.setEmail(rawUser.email());
