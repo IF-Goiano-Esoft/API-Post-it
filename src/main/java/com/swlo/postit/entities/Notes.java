@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.awt.font.TextHitInfo;
 import java.time.Instant;
 
 @Data
@@ -37,6 +38,13 @@ public class Notes {
     @Column(nullable = false)
     private String color;
 
+    public Notes(Long id, String title, String content, String color) {
+        Id = id;
+        this.title = title;
+        this.content = content;
+        this.color = color;
+    }
+
     public Notes(Long id, String title, String content, Instant createdAt, Instant updatedAt, String color) {
         Id = id;
         this.title = title;
@@ -44,5 +52,13 @@ public class Notes {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.color = color;
+    }
+
+    public Notes(String title, String content, String color) {
+        this.title = title;
+        this.content = content;
+        this.color = color;
+        this.createdAt = Instant.now();
+        this.updatedAt = Instant.now();
     }
 }
